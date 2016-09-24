@@ -12,19 +12,19 @@
 			<div class="home-text-container">
 				<h1>Registration</h1>	
 				<div class="signup-form">
-					<form method="POST" action="" style="float:right">
+					<form method="POST" action="http://localhost:5000/getNames" style="float:right">
 						<label for="FirstName">First Name:</label>
-						<input type="text" id="FirstName" />
+						<input type="text" id="FirstName" name = "firstName"/>
 						<label for="LastName">Last Name:</label>
-						<input type="text" id="LastName" />
+						<input type="text" id="LastName" name = "lastName"/>
 					</form>
 				</div>
 				<div class="signup-form2">
-					<form method="POST" action="">
+					<form method="POST" action="http://localhost:5000/checkUserName">
 						<label for="username">Username:</label>
-						<input type="text" id="username" />
+						<input type="text" id="username" name = 'userField'/>
 						<label for="password1">Password:</label>
-						<input type="password" id="password1" />
+						<input type="password" id="password1" name = "passField"/>
 						<input type="submit" class="button" id ="userReg1Submit" href="userreg2.html"/>
 					</form>
 				</div>	
