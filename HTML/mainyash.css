@@ -31,11 +31,17 @@ form {
 }
 
 .buttonDiv {
-	position: absolute;
+	position: relative;
 	width: 250px;
 	float: left;
 	margin: 20px;
+	right: 100px;
+
 	
+}
+
+.forms {
+	text-align: center;
 }
 
 .headerDiv {
@@ -53,6 +59,8 @@ form {
 	width: 100%;
 	cursor: pointer;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	position: relative;
+	left: 500px;
 }
 
 .button:hover {
@@ -126,6 +134,7 @@ form {
 /* Create User */
 .signup-form {
 	
+	display:inline-block;
 	margin: auto;
 	width: 400px;
 	background-color: #A9A9A9;
@@ -133,7 +142,7 @@ form {
 	padding: 20px;
 	margin-top: 20px;
 	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
-	float: left;
+	float:none;
 }
 
 .signup-form2 {
@@ -145,6 +154,7 @@ form {
 	padding: 20px;
 	margin-top: 20px;
 	height: 184px;
+	float: right;
 	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 }
 
