@@ -26,4 +26,3 @@ def user_auth(username, password):
     return is_valid_user
 
 print user_auth("user", "password")
-
