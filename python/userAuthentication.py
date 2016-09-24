@@ -1,4 +1,6 @@
 import MySQLdb
+from flask import Flask, redirect, url_for, request, render_template
+app = Flask(__name__)
 
 host = "localhost"
 server_user = "root"
@@ -9,14 +11,14 @@ db = MySQLdb.connect(host, server_user, server_password, database)
 
 cursor = db.cursor()
 
-
-def user_auth(username, password):
-    original_user = username
-    original_pass = password
+@app.route('/authenticate', methods = ['GET', 'POST'])
+def user_auth():
+    original_user = request.form['userField']
+    original_pass = request.form['passField']
     print original_user
     print original_pass
-    username = '\'' + username + '\''
-    password = '\'' + password + '\''
+    username = '\'' + original_user + '\''
+    password = '\'' + original_pass + '\''
     print username
     print password
     is_valid_user = False
@@ -36,8 +38,12 @@ def user_auth(username, password):
         else:
             raise Exception
     except:
-        print "Username or password was invalid"
-    return is_valid_user
+        return redirect(url_for('incorrectLogin'))
+    return render_template('Application.html')
 
+@app.route('/incorrectLogin')
+def incorrectLogin():
+    return 'Your Login information was incorrect. Please try again'
 
-print user_auth("user", "snd")
+if __name__ == '__main__':
+    app.run(debug = True)

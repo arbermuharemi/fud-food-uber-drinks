@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Update Preferences</title>
+    <link href="mainyash.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<header>
+    <h1>EZFly</h1>
+</header>-->
+<div class="home-background-shader">
+    <div id = "background">
+
+
+        <div class="home-text-container">
+            <h1 id="updatePreferences">Update Preferences</h1>
+            <div class="signup-form">
+                <form method="POST" action="message.html" style="float:right">
+                    <label for="Height">Height:</label>
+                    <input type="text" id="Height" />
+                    <label for="Weight">Weight:</label>
+                    <input type="text" id="Weight"/>
+                </form>
+            </div>
+            <div class="signup-form2">
+
+                <form>
+                    <label for = "foodPreferences">Food Preferences</label>
+                <select id = "foodPreferences" method = "POST" action = "">
+                    <option value = "Egg and Cheddar Sandwiches, 340, 3.00">Egg and Cheddar Sandwiches</option>
+                    <option value = "All Natural Greek Salad, 270, 3.50">All Natural Greek Salad</option>
+                    <option value = "Teriyaki Chicken, 400, 6.00">Teriyaki Chicken</option>
+                    <option value = "Deli Brisket Sandwiches, 350, 4.50">Deli Brisket Sandwiches</option>
+                    <option value = "Baguette with butter, 400, 2.50">Baguette with butter</option>
+                    <option value = "Fruit Bowl, 200, 2.00">Fruit Bowl</option>
+                    <option value = "Hamburger, 500, 5.00">Hamburger</option>
+                </select>
+                    </form>
+
+
+                <form>
+                    <label for = "drinkPreferences">Drink Preferences</label>
+                    <select id = "drinkPreferences" method = "POST" action = "message.html">
+                        <option value = "Ginger Ale, 120, 0">Ginger Ale</option>
+                        <option value = "Coca-Cola, 140, 0">Coca-Cola</option>
+                        <option value = "Apple Juice, 110, 0">Apple Juice</option>
+                        <option value = "Beer, 154, 5.00">Beer</option>
+                    </select>
+                </form>
+
+                <form>
+                    <label for = "restrictions">Food Restrictions (Hold control to select multiple): </label>
+                    <select id = "restrictions" method = "POST" action = "message.html" multiple>
+                        <option value = "Vegan">Vegan</option>
+                        <option value = "Vegetarian">Vegetarian</option>
+                        <option value = "Nut Allergies">Nut Allergies</option>
+                        <option value = "Gluten Allergy">Gluten Allergy</option>
+                        <option value = "Lactose Intolerance">Lactose Intolerance</option>
+                    </select>
+                </form>
+            </div>
+            <Button id = "UserRegSubmit">Submit</Button>
+</body>
+</html>
