@@ -30,9 +30,9 @@ def addUserToDatabase(username, password, firstname, lastname, height, weight, d
     dietaryRestrictions_insert = '\'' + dietaryRestrictions + '\''
     food_insert = '\'' + food + '\''
     height_insert = '\'' + height + '\''
-    sql = """insert into users (UserName, Password, FirstName, LastName, Height, Weight, Drinks, DietaryRestrictions, Food, AmountOwed)
-    values(""" + username_insert + ',' + password_insert + ',' +  firstname_insert + ',' + lastname_insert + ',' + height + ',' + weight + ',' + drinks_insert + ',' + dietaryRestrictions_insert + ',' + food_insert + ',' + amountOwed + """)"""
+    columnsStatement = 'insert into users (UserName, Password, FirstName, LastName, Height, Weight, Drinks, DietaryRestrictions, Food, AmountOwed)'
+    sql = columnsStatement + 'values(%s, %s, %s, %s, %s, %d, %s, %s, %s, %d)' %(username_insert, password_insert, firstname_insert, lastname_insert, height_insert, weight, drinks_insert, dietaryRestrictions_insert, food_insert, amountOwed)
     cursor.execute(sql)
-
+    db.commit()
 addUserToDatabase('jbutler', 'frontend', 'Jacob', 'Butler', '5 feet 11 inches', 190, 'Ginger Ale', 'Not Applicable', 'Sandwiches', 0)
 print (checkUserName("amuharemi"))
