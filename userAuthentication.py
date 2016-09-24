@@ -22,7 +22,7 @@ def user_auth(username, password):
         password = results[0][1]
         print password
     except:
-        print "No user exists"
+        print "Username or password was invalid"
     return is_valid_user
 
 print user_auth("user", "password")
