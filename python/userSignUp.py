@@ -10,13 +10,6 @@ database = "user_accounts"
 db = MySQLdb.connect(host, server_user, server_password, database)
 
 cursor = db.cursor()
-firstname = ""
-lastname = ""
-
-@app.route('/getNames', methods = ['GET', 'POST'])
-def getNames():
-    firstname = request.form['firstName']
-    lastname = request.form['lastName']
 
 @app.route('/checkUserName', methods=['GET', 'POST'])
 def checkUserName():
@@ -24,15 +17,16 @@ def checkUserName():
     cursor.execute(sql)
     results = cursor.fetchall()
     isValid = True
-    username = request.form['userField']
-    password = request.form['passField']
-
+    user = request.form['userField']
+    myPass = request.form['passField']
+    first = request.form['firstName']
+    last = request.form['lastName']
     for row in results:
         for entry in row:
-            if (username == entry):
+            if (user == entry):
                 isValid = False
     if (isValid):
-        return redirect(url_for('addUserToDatabase1'), username = username, password = password, firstname = firstname, lastname = lastname)
+        return redirect(url_for('addUserToDatabase1', username = user, password = myPass, firstname = first, lastname = last))
     else:
         return redirect(url_for('incorrectUser'))
 
@@ -40,7 +34,7 @@ def checkUserName():
 def incorrectUser():
     return "This username is taken. Please sign up with another username."
 
-@app.route('/addUserToDatabase1')
+@app.route('/addUserToDatabase1/<username>/<password>/<firstname>/<lastname>')
 def addUserToDatabase1(username, password, firstname, lastname):
     username_insert = '\'' + username + '\''
     password_insert = '\'' + password + '\''
@@ -50,6 +44,7 @@ def addUserToDatabase1(username, password, firstname, lastname):
     sql = columnsStatement + 'values(%s, %s, %s, %s)' %(username_insert, password_insert, firstname_insert, lastname_insert)
     cursor.execute(sql)
     db.commit()
+    return render_template('UserReg2.html')
 
 def addUserToDatabase2(height, weight, drinks, dietaryRestrictions, food, amountOwed):
     drinks_insert = '\'' + drinks + '\''
