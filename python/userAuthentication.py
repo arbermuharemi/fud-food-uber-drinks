@@ -10,6 +10,7 @@ database = "user_accounts"
 db = MySQLdb.connect(host, server_user, server_password, database)
 
 cursor = db.cursor()
+currentUser = ""
 
 @app.route('/authenticate', methods = ['GET', 'POST'])
 def user_auth():
@@ -39,6 +40,7 @@ def user_auth():
             raise Exception
     except:
         return redirect(url_for('incorrectLogin'))
+    currentUser = original_user
     return render_template('Application.html')
 
 @app.route('/incorrectLogin')

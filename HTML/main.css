@@ -1,10 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
 
 body {
-    background-color: black;
+    background-image: url("plane.jpg");
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	/*background-color: #F1F1F1;*/
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
+	background-color: transparent;
 }
 
 h1 {
@@ -27,8 +31,12 @@ header h1 {
 	left: 10px;
 }
 
+#brand-logo {
+    float: left;
+    margin-top: 5px;
+}
+
 #home-text-container {
-    width = 100%;
     /*overflow: hidden;*/
 }
 
@@ -52,9 +60,39 @@ header h1 {
 
 }
 
-.background-image {
-    background-image: url("plane.jpg");
+ul {
+    list-style-type: none;
+    /*margin: 0;
+    padding: 0;*/
+    width: 400px;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    margin-top: 0px
 }
+
+/*li {
+    float: left;
+}*/
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    position: center;
+    width: 93px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
 
 .signupbutton {
 	padding: 10px;
@@ -69,13 +107,6 @@ header h1 {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.signupbutton:hover {
-	background-color: #00FF00;
-	transition: all 0.5s ease;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-
 .loginbutton {
 	padding: 10px;
 	background-color: #3366ff;
@@ -89,31 +120,26 @@ header h1 {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.loginbutton:hover {
-	background-color: #668cff;
-	transition: all 0.5s ease;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
 .button:hover {
 	background-color: #00FF00;
 	transition: all 0.5s ease;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+/*.navbar {
+    display: flex;
+}*/
+
 .navbar-brand {
     float: left;
 }
 
 .navbar-form {
-    height: 20px;
-    width: 800px;
+    float: left;
 }
 
 .navbar-items {
-    float: right;
-    height: 100%;
-    align-items: baseline;
+    position: center;
 }
 
 /* Home */
@@ -123,18 +149,16 @@ header h1 {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-image: url("plane.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z: -2;
 }
 
 .home-text-container {
 	color: #FFF;
 	text-align: center;
+	height:500px;
 	z-index: 1;
 }
 
@@ -162,6 +186,19 @@ header h1 {
 
 .logindiv {
     display: inline-block;
+}
+
+.signup-form2 {
+	display: inline-block;
+	margin: 20px;
+	width: 400px;
+	/*background-color: #A9A9A9;*/
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
+	height: 184px;
+	/*float: right;
+	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 }
 
 /* Create User */
