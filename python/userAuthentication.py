@@ -1,4 +1,6 @@
 import MySQLdb
+import urllib2
+import json
 from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
@@ -110,6 +112,26 @@ def storeFlightInfo():
     cursor.execute(sql)
     db.commit()
     return render_template('Application.html')
+
+def verify_flight():
+    sql = "select FlightNumber, Date " \
+          "from users" \
+          "where UserName = user"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    flight_number = results[0][0]
+    flight_origin_date = results[0][1]
+    api_call = ''.join(["https://demo30-test.apigee.net/v1/hack/status"
+                        "?flightNumber=", str(flight_number),"&flightOriginDate=",
+                        flight_origin_date,
+                        "&apikey=ZINxBqol4GEAB9L1T25ZcFyG9vmapoLW"])
+    new_flight_info = urllib2.urlopen(api_call).read()
+    flight_info_json = json.loads(new_flight_info)
+    actual_flight = flight_info_json["flightStatusResponse"]["status"]
+    if actual_flight == "SUCCESS":
+        return True
+    else:
+        return False
 
 @app.route('/toWelcomePage', methods = ['GET', 'POST'])
 def toWelcomePage():
