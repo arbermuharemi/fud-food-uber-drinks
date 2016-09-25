@@ -47,7 +47,6 @@ def foodamountDue(username, food_item, quantity):
     usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
     cursor.execute(usersqlget)
     results = cursor.fetchall()
-    print (results)
     totalAmountOwed = totalPrice + float(results[0][0])
     usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
     cursor.execute(usersqlpost)
@@ -91,7 +90,6 @@ def drinkamountDue(username, drink_item, quantity):
     usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
     cursor.execute(usersqlget)
     results = cursor.fetchall()
-    print (results)
     totalAmountOwed = totalPrice + float(results[0][0])
     usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
     cursor.execute(usersqlpost)

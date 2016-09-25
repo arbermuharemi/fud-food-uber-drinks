@@ -24,8 +24,6 @@ def get_coords(flight_number, flight_origin_date):
     "flightStatusTO"]["flightStatusLegTOList"]["arrivalTsoagLatitudeDecimal"]
     arrivalLong = flight_info_json["flightStatusResponse"]["statusResponse"][
         "flightStatusTO"]["flightStatusLegTOList"]["arrivalTsoagLongitudeDecimal"]
-    print arrivalLong
-    print arrivalLat
     return [arrivalLat, arrivalLong]
 
 
@@ -36,7 +34,6 @@ def call_uber(flight_number, flight_origin_date):
     client = UberRidesClient(session)
     response = client.get_products(coords[0], coords[1])
     products = response.json.get('products')
-    print products
     auth_flow = AuthorizationCodeGrant(
         "gT2GLeVlXMQkrWWBO872bcjHK168Tr8W",
         None,
