@@ -106,7 +106,7 @@ def storeFlightInfo():
     flightCode = '\'' + request.form['flightField'] + '\''
     dateOfDeparture = '\'' + request.form['dateField'] + '\''
     print ("This is start info test " + currentUser + " " + flightCode)
-    sql = 'update users set FlightCode = %s where UserName = %s;' %(flightCode, currentUser)
+    sql = 'update users set FlightCode = %s, Date = %s where UserName = %s;' %(flightCode, dateOfDeparture, currentUser)
     cursor.execute(sql)
     db.commit()
     return render_template('Application.html')
@@ -128,12 +128,16 @@ def toUserRegistration():
 @app.route('/purchaseFood', methods = ['GET', 'POST'])
 def purchaseFood():
     food_item = request.form.get('foodChoices')
+    food_item = food_item[0:food_item.index(",")]
+    print food_item
     quantity = 1
     food_item_insert = '\'' + food_item + '\''
     sqlget = "select Quantity from food where FoodName = %s" %food_item_insert
     cursor.execute(sqlget)
     results = cursor.fetchall()
+    print results
     db_quantity = int(results[0][0])
+    print quantity
     try:
         if (quantity > db_quantity):
             raise Exception
@@ -148,20 +152,18 @@ def purchaseFood():
 @app.route('/foodAmountDue/<food_item>/<quantity>', methods = ['GET', 'POST'])
 def foodamountDue(food_item, quantity):
     global currentUser
-    username = currentUser
     food_item_insert = '\'' + food_item + '\''
-    username_insert = '\'' + username + '\''
     foodsql = "select Price from Food where FoodName = %s" % food_item_insert
     cursor.execute(foodsql)
     results = cursor.fetchall()
     pricePerItem = float(results[0][0])
-    totalPrice = pricePerItem * quantity
-    usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
+    totalPrice = pricePerItem
+    usersqlget = "select AmountOwed from users where UserName = %s" % currentUser
     cursor.execute(usersqlget)
     results = cursor.fetchall()
     print (results)
-    totalAmountOwed = totalPrice + float(results[0][0])
-    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
+    totalAmountOwed = totalPrice + totalPrice
+    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, currentUser)
     cursor.execute(usersqlpost)
     db.commit()
     return render_template('Drink.html')
@@ -183,9 +185,10 @@ def toApplicationPage():
     return render_template("Application.html")
 
 @app.route('/purchaseDrink', methods = ['GET', 'POST'])
-def purchaseDrink(drink_item, quantity):
-    drink_item = request.form.get('foodChoices')
+def purchaseDrink():
+    drink_item = request.form.get('drinkChoices')
     quantity = 1;
+    drink_item = drink_item[0:drink_item.index(",")]
     drink_item_insert = '\'' + drink_item + '\''
     sqlget = "select Quantity from drink where DrinkName = %s" %drink_item_insert
     cursor.execute(sqlget)
@@ -203,27 +206,44 @@ def purchaseDrink(drink_item, quantity):
     return redirect(url_for('drinkAmountDue', drink_item = drink_item, quantity = quantity))
 
 @app.route('/drinkAmountDue/<drink_item>/<quantity>', methods = ['GET', 'POST'])
-def drinkamountDue(drink_item, quantity):
+def drinkAmountDue(drink_item, quantity):
     global currentUser
-    username = currentUser
     drink_item_insert = '\'' + drink_item + '\''
-    username_insert = '\'' + username + '\''
     foodsql = "select Price from drink where DrinkName = %s" % drink_item_insert
     cursor.execute(foodsql)
     results = cursor.fetchall()
     pricePerItem = float(results[0][0])
-    totalPrice = pricePerItem * quantity
-    usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
+    totalPrice = pricePerItem
+    usersqlget = "select AmountOwed from users where UserName = %s" % currentUser
     cursor.execute(usersqlget)
     results = cursor.fetchall()
     print (results)
-    totalAmountOwed = totalPrice + float(results[0][0])
-    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
+    totalAmountOwed = totalPrice
+    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, currentUser)
     cursor.execute(usersqlpost)
     db.commit()
     return render_template("Application.html")
 
-
+@app.route('/updateUserInfo', methods = ['GET', 'POST'])
+def updateUserInfo():
+    global currentUser
+    height = request.form['heightField']
+    weight = int(request.form['weightField'])
+    drinks = request.form['drinkSelect']
+    dietaryRestrictions = request.form.getlist('restrictionSelect')
+    dietaryRestrictions = ','.join(dietaryRestrictions)
+    food = request.form['foodSelect']
+    amountOwed = 0
+    drinks_insert = '\'' + drinks + '\''
+    dietaryRestrictions_insert = '\'' + dietaryRestrictions + '\''
+    food_insert = '\'' + food + '\''
+    height_insert = '\'' + height + '\''
+    print ("User is " + currentUser)
+    columnsStatement = 'update users set Height = %s, Weight = %d, Drinks = %s, DietaryRestrictions = %s, Food = %s, AmountOwed = %f' %(height_insert, weight, drinks_insert, dietaryRestrictions_insert, food_insert, amountOwed)
+    sql = columnsStatement + 'where UserName = %s' %(currentUser)
+    cursor.execute(sql)
+    db.commit()
+    return render_template('Application.html')
 
 if __name__ == '__main__':
     app.run(debug = True)

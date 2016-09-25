@@ -14,18 +14,18 @@
         <div class="home-text-container">
             <h1>Update Your Profile</h1>
             <div class="signup-form">
-                <form method="POST">
+                <form method="POST" action="http://localhost:5000/updateUserInfo">
                     <label for="Height">Height:</label>
-                    <input type="text" id="Height"/>
+                    <input type="text" id="Height" name="heightField"/>
                     <label for="Weight">Weight:</label>
-                    <input type="text" id="Weight"/>
+                    <input type="text" id="Weight" name = "weightField"/>
                 
             
             
 
                 
                     <label for = "foodPreferences">Food Preferences:</label>
-                <select id = "foodPreferences" method = "POST">
+                <select id = "foodPreferences" name = "foodSelect">
                     <option value = "Egg and Cheddar Sandwiches, 340, 3.00">Egg and Cheddar Sandwiches</option>
                     <option value = "All Natural Greek Salad, 270, 3.50">All Natural Greek Salad</option>
                     <option value = "Teriyaki Chicken, 400, 6.00">Teriyaki Chicken</option>
@@ -39,7 +39,7 @@
 
                 
                     <label for = "drinkPreferences">Drink Preferences:</label>
-                    <select id = "drinkPreferences" method = "POST">
+                    <select id = "drinkPreferences" name = "drinkSelect">
                         <option value = "Ginger Ale, 120, 0">Ginger Ale</option>
                         <option value = "Coca-Cola, 140, 0">Coca-Cola</option>
                         <option value = "Apple Juice, 110, 0">Apple Juice</option>
@@ -49,7 +49,7 @@
 
                 
                     <label for = "restrictions">Food Restrictions (Hold control to select multiple): </label>
-                    <select id = "restrictions" method = "POST" action = "message.html" multiple>
+                    <select id = "restrictions" name = "restrictionSelect" method = "POST" action = "message.html" multiple>
                         <option value = "Vegan">Vegan</option>
                         <option value = "Vegetarian">Vegetarian</option>
                         <option value = "Nut Allergies">Nut Allergies</option>
