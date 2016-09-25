@@ -93,7 +93,7 @@ def addUserToDatabase2():
     dietaryRestrictions = ','.join(dietaryRestrictions)
     print (dietaryRestrictions)
     food = request.form['foodSelect']
-    amountOwed = 0;
+    amountOwed = 0
     drinks_insert = '\'' + drinks + '\''
     dietaryRestrictions_insert = '\'' + dietaryRestrictions + '\''
     food_insert = '\'' + food + '\''
@@ -106,8 +106,9 @@ def addUserToDatabase2():
 
 @app.route('/storeFlightInfo', methods = ['GET', 'POST'])
 def storeFlightInfo():
-    flightCode = request.form['flightNumber']
-    dateOfDeparture = request.form['dateNumber']
+    flightCode = request.form['flightField']
+    dateOfDeparture = request.form['dateField']
+    print("Working before template")
     return render_template('Application.html')
 
 if __name__ == '__main__':
