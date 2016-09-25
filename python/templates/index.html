@@ -1,7 +1,7 @@
 <html>
 <head>
-	<title>ezFly</title>
-	<link href="../static/stylesheets/main.css" rel="stylesheet" type="text/css">
+	<title>FUD</title>
+	<link href="{{ url_for('static', filename='stylesheets/main.css') }}" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="background-picture">
@@ -11,11 +11,11 @@
             <h1>Welcome to ezFly</h1>
             <div id="useroptions">
                 <div id="signupdiv">
-			        <a id="signupbutton" href="userreg.html" class="signupbutton">Sign Up</a>
+                        <a id="signupbutton" href = "http://localhost:5000/toUserRegistration" class = "signupbutton">Sign Up</a>
                 </div>
                 <div id="middle"></div>
                 <div id="logindiv">
-                    <a id="loginbutton" href="login.html" class="loginbutton">Login</a>
+                       <a id="loginbutton" href = "http://localhost:5000/toLoginPage" class = "loginbutton">Login</a>
                 </div>
             </div>
 		</div>

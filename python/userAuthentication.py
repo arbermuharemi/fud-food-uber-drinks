@@ -42,7 +42,7 @@ def user_auth():
             raise Exception
     except:
         return redirect(url_for('incorrectLogin'))
-    currentUser = original_user
+    currentUser = username
     return render_template('FlightNumber.html')
 
 @app.route('/incorrectLogin')
@@ -108,8 +108,22 @@ def addUserToDatabase2():
 def storeFlightInfo():
     flightCode = request.form['flightField']
     dateOfDeparture = request.form['dateField']
-    print("Working before template")
+    sql = 'insert into users (FlightCode, Date) values(%s, %s) where UserName = %s' % (flightCode, dateOfDeparture, currentUser)
+    cursor.execute(sql)
+    db.commit()
     return render_template('Application.html')
+
+@app.route('/toWelcomePage', methods = ['GET', 'POST'])
+def toWelcomePage():
+    return render_template('index.html')
+
+@app.route('/toLoginPage', methods = ['GET', 'POST'])
+def toLoginPage():
+    return render_template('Login.html')
+
+@app.route('/toUserRegistration', methods = ['GET', 'POST'])
+def toUserRegistration():
+    return render_template('UserReg.html')
 
 if __name__ == '__main__':
     app.run(debug = True)
