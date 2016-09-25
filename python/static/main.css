@@ -1,7 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100);
 
 body {
-    background-color: black;
+    background-image: url("plane.jpg");
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	/*background-color: #F1F1F1;*/
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
@@ -52,9 +55,34 @@ header h1 {
 
 }
 
-.background-image {
-    background-image: url("plane.jpg");
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
 
 .signupbutton {
 	padding: 10px;
@@ -99,7 +127,6 @@ header h1 {
 
 .navbar-items {
     float: right;
-    height: 100%;
     align-items: baseline;
 }
 
@@ -110,19 +137,16 @@ header h1 {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-image: url("plane.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z = -2;
 }
 
 .home-text-container {
 	color: #FFF;
 	text-align: center;
-	z-index: 1;
+	z-index: -1;
 }
 
 .home-text-container h1 {

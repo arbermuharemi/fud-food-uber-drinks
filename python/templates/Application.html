@@ -1,37 +1,20 @@
 <html>
 <head>
 	<title>Application Page</title>
-	<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+	<link href="../static/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="navbar">
-                <div class="navbar-header">
-            <a class="navbar-brand" href="#">ezFly</a>
+    <div class="background-picture">
+        <div class="navbar">
             <div class="navbar-items">
-                <form class="navbar-form">
-                    <input type="text" placeholder="Username" class="form-control">
-                    <input type="password" placeholder="Password" class="form-control">
-                    <button type="submit" class="btn btn-success">Sign in</button>
-                </form>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li style="float:right"><a class="active" href="#about">About</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="background-picture">
-        <div class="home-container">
-		<div class="home-text-container">
-			<h1>What Next?</h1>
-            <div id="useroptions">
-                <div id="signupdiv">
-			        <a id="signupbutton" href="index.html" class="signupbutton">Logout</a>
-                </div>
-                <div id="middle"></div>
-                <div id="logindiv">
-                    <a id="updatePref" href="updatePref.html" class="loginbutton">Update Preferences</a>
-                </div>
-            </div>
-		</div>
-		<div class="home-background-shader"></div>
-    </div>
     </div>
 </body>
 </html>
