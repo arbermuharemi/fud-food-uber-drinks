@@ -80,7 +80,7 @@ li a {
     padding: 14px 0px;
     text-decoration: none;
     position: center;
-    width: 93px;
+    width: 80px;
 }
 
 li a:hover:not(.active) {

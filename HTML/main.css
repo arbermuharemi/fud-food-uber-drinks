@@ -46,6 +46,8 @@ header h1 {
 }
 
 .next-page-link {
+    background-color: Transparent;
+    borner: none;
     text-decoration: none;
     font-size: 30px;
     font-weight: 30;
