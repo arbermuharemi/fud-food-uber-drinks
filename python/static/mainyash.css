@@ -159,6 +159,7 @@ form {
 	margin-top: 20px;
 	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 	float:none;
+	margin: bottom: 60px;
 }
 
 .signup-form2 {
@@ -217,17 +218,20 @@ form {
 
 #foodPreferences {
     padding: 15px;
-    width: 200px;
+    width: 400px;
+    margin-bottom: 5px;
 }
 
 #drinkPreferences {
     padding: 15px;
-    width: 200px;
+    width: 400px;
+    margin-bottom: 5px;
 }
 
 #restrictions {
     padding: 10px:
-    width: 50 px;
+    width: 800 px;
+    margin-bottom: 5px;
 }
 
 #background {
@@ -253,4 +257,26 @@ form {
 
 }
 
+#height {
+	margin-bottom: 5px;
+}
 
+#weight {
+	margin-bottom: 5px;
+}
+
+#registrationButton {
+	padding: 10px;
+	background-color: #00DD00;
+	border-radius: 30px;
+	color: #FFF;
+	text-decoration: none;
+	display: block;
+	border: none;
+	width: 100px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	position: absolute;
+	top: 600px;
+	right:620px;
+}
