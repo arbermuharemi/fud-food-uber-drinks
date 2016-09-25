@@ -280,3 +280,25 @@ form {
 	top: 600px;
 	right:620px;
 }
+
+#big-window {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: url("AirplaneTakeoff.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#FlightNoTextContainer {
+	color: #FFF;
+	text-align: center;
+	z-index: 1;
+}
+
