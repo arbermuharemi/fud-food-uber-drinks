@@ -36,6 +36,26 @@ header h1 {
     margin-top: 5px;
 }
 
+.food-form {
+    width: 400px;
+    display: inline-block;
+}
+
+.fill-div {
+    height: 125px;
+}
+
+.next-page-link {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 30;
+    color: black;
+}
+
+#food-restrict {
+    margin-top: 20px;
+}
+
 #home-text-container {
     /*overflow: hidden;*/
 }
@@ -197,6 +217,8 @@ li a:hover:not(.active) {
 	padding: 20px;
 	margin-top: 20px;
 	height: 184px;
+	margin-left: auto;
+	margin-right: auto;
 	/*float: right;
 	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 }
