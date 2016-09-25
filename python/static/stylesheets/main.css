@@ -37,6 +37,7 @@ header h1 {
 }
 
 
+
 #useroptions {
     display: flex;
     margin-top: 20px;
@@ -235,105 +236,43 @@ li a:hover:not(.active) {
 	margin-bottom: 20px;
 }
 
-/* Message */
-.message-content {
-	position: absolute;
-	z-index: 1;
-	top: 70px;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	display: flex;
+
+
+#restrictionsForm {
+    text-align: center
+    width: 100px;
 }
 
-.user-pane {
-	max-width: 300px;
-	min-width: 200px;
-	flex-grow: 1;
-	margin: 0;
-	background-color: #FFF;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	z-index: 1;
-	padding: 0;
+.food-form {
+    text-align: center
 }
 
-.user-pane li {
-	list-style: none;
-	display: flex;
-	align-items: center;
-	border-bottom: 1px solid #ccc;
-	padding: 10px;
-	cursor: pointer;
+#signup-form {
+    position: relative;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
 }
 
-.user-pane li:hover {
-	background-color: #DDD;
+#ApplicationButton {
+    padding: 10px;
+    	background-color: #6699ff;
+    	border-radius: 30px;
+    	color: #FFF;
+    	text-decoration: none;
+    	display: block;
+    	border: none;
+    	width: 60%;
+    	cursor: pointer;
+    	margin-top: 300px;
+    	margin-left: 80px;
+    	/*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
 }
 
-.profile-image {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	margin-right: 5px;
-}
-
-.message-pane {
-	flex-grow: 5;
-	display: flex;
-	flex-direction: column;
-	z-index: 0;
-}
-
-.messages {
-	flex-grow: 1;
-	padding: 20px;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	overflow-x: auto;
-}
-
-.message {
-	position: relative;
-	list-style: none;
-	margin: 3px;
-	border-radius: 20px;
-	padding: 10px;
-	padding-left: 15px;
-	padding-right: 15px;
-	font-size: 14px;
-	max-width: 60%;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-.first-person-message {
-	align-self: flex-end;
-	background-color: #0084FF;
-	color: #FFF;
-}
-.second-person-message {
-	align-self: flex-start;
-	background-color: #CCC;
-}
-
-.typing-area {
-	flex-grow: 0;
-	height: 50px;
-	background-color: #FFF;
-	margin: 0;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-	display: flex;
-}
-
-.typing-area input[type=text] {
-	flex-grow: 1;
-	padding: 10px;
-	font-size: 16px;
-	outline: none;
-	border: none;
-}
-
-.typing-area input[type=submit] {
-	width: 70px;
+#entree-select {
+    margin-bottom: 20px;
 }

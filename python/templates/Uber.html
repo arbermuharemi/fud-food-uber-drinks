@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Application Page</title>
-	<link href="../static/stylesheets/main.css" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='stylesheets/main.css') }}" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -12,10 +12,10 @@
             </div>
             <div class="navbar-items">
                 <ul>
-                    <li><a href="Application.html">Food</a></li>
+                    <li><a href="http://localhost:5000/toApplicationPage">Food</a></li>
                     <li><a class="active">Uber</a></li>
-                    <li><a href="Drink.html">Drink</a></li>
-                    <li><a href="index.html">Sign Off</a></li>
+                    <li><a href="http://localhost:5000/toDrinkPage">Drink</a></li>
+                    <li><a href="http://localhost:5000/toWelcomePage">Sign Off</a></li>
                 </ul>
             </div>
         </div>

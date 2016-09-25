@@ -7,25 +7,25 @@
     <div class="background-picture">
         <div class="navbar">
             <div class="brand">
-                <img id="brand-logo" src="../../HTML/logo.png" />
+                <img id="brand-logo" src="../static/logo.png" />
             </div>
             <div class="navbar-items">
                 <ul>
                     <li><a class="active">Food</a></li>
-                    <li><a href="Uber.html">Uber</a></li>
-                    <li><a href="Drink.html">Drink</a></li>
-                    <li><a href="UpdatePref.html">Update Profile</a></li>
+                    <li><a href="http://localhost:5000/toUberPage">Uber</a></li>
+                    <li><a href="http://localhost:5000/toDrinkPage">Drink</a></li>
+                    <li><a href="http://localhost:5000/toUpdatePage">Update Profile</a></li>
                     <li><a href="http://localhost:5000/toWelcomePage">Sign Off</a></li>
                 </ul>
             </div>
         </div>
         <div class="home-text-container">
             <div class="fill-div"></div>
-            <div class="food-form">
-                <form>
+
+                <form id="signup-form" method = "POST" action = "http://localhost:5000/purchaseFood">
                     <div id="entree-select">
                         <label for = "foodPreferences">Select Entree:</label>
-                        <select id = "foodPreferences" method = "POST" action = "">
+                        <select id = "foodPreferences" name = "foodChoices">
                         <option value = "Egg and Cheddar Sandwiches, 340, 3.00">Egg and Cheddar Sandwiches, 340 cal, $3</option>
                         <option value = "All Natural Greek Salad, 270, 3.50">All Natural Greek Salad, 270 cal, $3.50</option>
                         <option value = "Teriyaki Chicken, 400, 6.00">Teriyaki Chicken, 400 cal, $6</option>
@@ -44,15 +44,11 @@
                         <option value = "Gluten Allergy">Gluten Allergy</option>
                         <option value = "Lactose Intolerance">Lactose Intolerance</option>
                         </select>
-                        <input type="text" id="username-entry" placeholder="Username"/>
-                        <input type="submit" id ="UserRegSubmit" value="submit"/>
+                        <input type="submit" id="ApplicationButton" value="Submit"/>
                     </div>
                 </form>
-                <a class="next-page-link" href="Uber.html"> >> </a>
-            </div>
-                <form action="" method="POST">
-                    <button type="submit" class="next-page-link" href="Uber.html"> >> </button>
-                </form>
+
+
         </div>
     </div>
 </body>

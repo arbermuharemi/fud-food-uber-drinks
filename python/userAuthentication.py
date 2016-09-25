@@ -16,6 +16,7 @@ dateOfDeparture = ""
 
 @app.route('/authenticate', methods = ['GET', 'POST'])
 def user_auth():
+    global currentUser
     original_user = request.form['userField']
     original_pass = request.form['passField']
     print original_user
@@ -74,6 +75,7 @@ def incorrectUser():
 
 @app.route('/addUserToDatabase1/<username>/<password>/<firstname>/<lastname>')
 def addUserToDatabase1(username, password, firstname, lastname):
+    global currentUser
     username_insert = '\'' + username + '\''
     password_insert = '\'' + password + '\''
     firstname_insert = '\'' + firstname + '\''
@@ -82,10 +84,12 @@ def addUserToDatabase1(username, password, firstname, lastname):
     sql = columnsStatement + 'values(%s, %s, %s, %s)' %(username_insert, password_insert, firstname_insert, lastname_insert)
     cursor.execute(sql)
     db.commit()
+    currentUser = username_insert
     return render_template('UserReg2.html')
 
 @app.route('/addUserToDatabase2', methods = ['GET', 'POST'])
 def addUserToDatabase2():
+    global currentUser
     height = request.form['heightField']
     weight = int(request.form['weightField'])
     drinks = request.form['drinkSelect']
@@ -98,23 +102,27 @@ def addUserToDatabase2():
     dietaryRestrictions_insert = '\'' + dietaryRestrictions + '\''
     food_insert = '\'' + food + '\''
     height_insert = '\'' + height + '\''
-    columnsStatement = 'insert into users (Height, Weight, Drinks, DietaryRestrictions, Food, AmountOwed)'
-    sql = columnsStatement + 'values(%s, %d, %s, %s, %s, %d)' %(height_insert, weight, drinks_insert, dietaryRestrictions_insert, food_insert, amountOwed)
+    columnsStatement = 'update users set Height = %s, Weight = %d, Drinks = %s, DietaryRestrictions = %s, Food = %s, AmountOwed = %f' %(height_insert, weight, drinks_insert, dietaryRestrictions_insert, food_insert, amountOwed)
+    sql = columnsStatement + 'where UserName = %s' %(currentUser)
     cursor.execute(sql)
     db.commit()
     return render_template('FlightNumber.html')
 
 @app.route('/storeFlightInfo', methods = ['GET', 'POST'])
 def storeFlightInfo():
-    flightCode = request.form['flightField']
-    dateOfDeparture = request.form['dateField']
-    sql = 'insert into users (FlightCode, Date) values(%s, %s) where UserName = %s' % (flightCode, dateOfDeparture, currentUser)
+    global currentUser
+    flightCode = '\'' + request.form['flightField'] + '\''
+    dateOfDeparture = '\'' + request.form['dateField'] + '\''
+    print ("This is start info test " + currentUser + " " + flightCode)
+    sql = 'update users set FlightCode = %s where UserName = %s;' %(flightCode, currentUser)
     cursor.execute(sql)
     db.commit()
     return render_template('Application.html')
 
 @app.route('/toWelcomePage', methods = ['GET', 'POST'])
 def toWelcomePage():
+    global currentUser
+    currentUser = ""
     return render_template('index.html')
 
 @app.route('/toLoginPage', methods = ['GET', 'POST'])
@@ -124,6 +132,106 @@ def toLoginPage():
 @app.route('/toUserRegistration', methods = ['GET', 'POST'])
 def toUserRegistration():
     return render_template('UserReg.html')
+
+@app.route('/purchaseFood', methods = ['GET', 'POST'])
+def purchaseFood():
+    food_item = request.form.get('foodChoices')
+    quantity = 1
+    food_item_insert = '\'' + food_item + '\''
+    sqlget = "select Quantity from food where FoodName = %s" %food_item_insert
+    cursor.execute(sqlget)
+    results = cursor.fetchall()
+    db_quantity = int(results[0][0])
+    try:
+        if (quantity > db_quantity):
+            raise Exception
+    except:
+        print ("You ordered more than what was available")
+    new_quantity = db_quantity - quantity
+    sqlpost = "update food set Quantity = %d where FoodName = %s" % (new_quantity, food_item_insert)
+    cursor.execute(sqlpost)
+    db.commit()
+    return redirect(url_for('foodamountDue', food_item = food_item, quantity = quantity))
+
+@app.route('/foodAmountDue/<food_item>/<quantity>', methods = ['GET', 'POST'])
+def foodamountDue(food_item, quantity):
+    global currentUser
+    username = currentUser
+    food_item_insert = '\'' + food_item + '\''
+    username_insert = '\'' + username + '\''
+    foodsql = "select Price from Food where FoodName = %s" % food_item_insert
+    cursor.execute(foodsql)
+    results = cursor.fetchall()
+    pricePerItem = float(results[0][0])
+    totalPrice = pricePerItem * quantity
+    usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
+    cursor.execute(usersqlget)
+    results = cursor.fetchall()
+    print (results)
+    totalAmountOwed = totalPrice + float(results[0][0])
+    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
+    cursor.execute(usersqlpost)
+    db.commit()
+    return render_template('Drink.html')
+
+@app.route('/toUberPage', methods = ['GET', 'POST'])
+def toUberPage():
+    return render_template("Uber.html")
+
+@app.route('/toDrinkPage', methods = ['GET', 'POST'])
+def toDrinkPage():
+    return render_template("Drink.html")
+
+@app.route('/toUpdatePage', methods = ['GET', 'POST'])
+def toUpdatePage():
+    return render_template("UpdatePref.html")
+
+@app.route('/toApplicationPage', methods = ['GET', 'POST'])
+def toApplicationPage():
+    return render_template("Application.html")
+
+@app.route('/purchaseDrink', methods = ['GET', 'POST'])
+def purchaseDrink(drink_item, quantity):
+    drink_item = request.form.get('foodChoices')
+    quantity = 1;
+    drink_item_insert = '\'' + drink_item + '\''
+    sqlget = "select Quantity from drink where DrinkName = %s" %drink_item_insert
+    cursor.execute(sqlget)
+    results = cursor.fetchall()
+    db_quantity = int(results[0][0])
+    try:
+        if (quantity > db_quantity):
+            raise Exception
+    except:
+        print ("You ordered more than what was available")
+    new_quantity = db_quantity - quantity
+    sqlpost = "update drink set Quantity = %d where DrinkName = %s" % (new_quantity, drink_item_insert)
+    cursor.execute(sqlpost)
+    db.commit()
+    return redirect(url_for('drinkAmountDue', drink_item = drink_item, quantity = quantity))
+
+@app.route('/drinkAmountDue/<drink_item>/<quantity>', methods = ['GET', 'POST'])
+def drinkamountDue(drink_item, quantity):
+    global currentUser
+    username = currentUser
+    drink_item_insert = '\'' + drink_item + '\''
+    username_insert = '\'' + username + '\''
+    foodsql = "select Price from drink where DrinkName = %s" % drink_item_insert
+    cursor.execute(foodsql)
+    results = cursor.fetchall()
+    pricePerItem = float(results[0][0])
+    totalPrice = pricePerItem * quantity
+    usersqlget = "select AmountOwed from users where UserName = %s" % username_insert
+    cursor.execute(usersqlget)
+    results = cursor.fetchall()
+    print (results)
+    totalAmountOwed = totalPrice + float(results[0][0])
+    usersqlpost = "update users set AmountOwed = %f where UserName = %s" % (totalAmountOwed, username_insert)
+    cursor.execute(usersqlpost)
+    db.commit()
+    return render_template("Application.html")
+
+
 
 if __name__ == '__main__':
     app.run(debug = True)

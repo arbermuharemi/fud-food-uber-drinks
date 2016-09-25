@@ -307,3 +307,13 @@ form {
 	text-align: center;
 	z-index: 1;
 }
+
+#flightNumber {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+#dateNumber {
+    width: 400px;
+    margin-bottom: 20px
+}
