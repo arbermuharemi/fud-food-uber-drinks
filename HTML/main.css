@@ -158,7 +158,8 @@ li a:hover:not(.active) {
 .home-text-container {
 	color: #FFF;
 	text-align: center;
-	z-index: -1;
+	height:500px;
+	z-index: 1;
 }
 
 .home-text-container h1 {
@@ -185,6 +186,19 @@ li a:hover:not(.active) {
 
 .logindiv {
     display: inline-block;
+}
+
+.signup-form2 {
+	display: inline-block;
+	margin: 20px;
+	width: 400px;
+	/*background-color: #A9A9A9;*/
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
+	height: 184px;
+	/*float: right;
+	/*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
 }
 
 /* Create User */

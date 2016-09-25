@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e632274-c9a2-4a22-9f94-6819185e2575" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HackGT-FlightApp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/HackGT.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTML/Drink.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTML/SignOff.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HTML/Uber.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/static/Airplane Food.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/static/clouds1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/static/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/templates/Drink.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/templates/SignOff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/python/templates/Uber.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python/templates/Clouds.jpg" afterPath="$PROJECT_DIR$/python/static/Clouds.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python/templates/Window.jpg" afterPath="$PROJECT_DIR$/python/static/Window.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python/templates/airplane.jpg" afterPath="$PROJECT_DIR$/python/static/airplane.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python/templates/mainyash.css" afterPath="$PROJECT_DIR$/python/static/mainyash.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HackGT-FlightApp" afterPath="$PROJECT_DIR$/HackGT-FlightApp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/Application.html" afterPath="$PROJECT_DIR$/HTML/Application.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/Drink.html" afterPath="$PROJECT_DIR$/HTML/Drink.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/SignOff.html" afterPath="$PROJECT_DIR$/HTML/SignOff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/Uber.html" afterPath="$PROJECT_DIR$/HTML/Uber.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HTML/main.css" afterPath="$PROJECT_DIR$/HTML/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/static/main.css" afterPath="$PROJECT_DIR$/python/static/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/templates/Application.html" afterPath="$PROJECT_DIR$/python/templates/Application.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/templates/Login.html" afterPath="$PROJECT_DIR$/python/templates/Login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/templates/UserReg.html" afterPath="$PROJECT_DIR$/python/templates/UserReg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python/templates/UserReg2.html" afterPath="$PROJECT_DIR$/python/templates/UserReg2.html" />
     </list>
     <ignored path="HackGT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +46,18 @@
       <file leaf-file-name="Application.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Application.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="750">
+              <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainyash.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HTML/mainyash.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-465">
+              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdatePref.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UpdatePref.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/UpdatePref.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -67,8 +86,28 @@
       <file leaf-file-name="Uber.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/Uber.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="210">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserReg.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTML/UserReg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserReg2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HTML/UserReg2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -77,8 +116,8 @@
       <file leaf-file-name="SignOff.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HTML/SignOff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+            <state relative-caret-position="210">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -88,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/HTML/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+              <caret line="199" column="19" selection-start-line="199" selection-start-column="19" selection-end-line="199" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -116,11 +155,11 @@
         <option value="$PROJECT_DIR$/HackGT-FlightApp/HTML/Application.html" />
         <option value="$PROJECT_DIR$/python/static/main.css" />
         <option value="$PROJECT_DIR$/python/templates/Application.html" />
-        <option value="$PROJECT_DIR$/HTML/main.css" />
-        <option value="$PROJECT_DIR$/HTML/Application.html" />
         <option value="$PROJECT_DIR$/HTML/Drink.html" />
         <option value="$PROJECT_DIR$/HTML/SignOff.html" />
         <option value="$PROJECT_DIR$/HTML/Uber.html" />
+        <option value="$PROJECT_DIR$/HTML/main.css" />
+        <option value="$PROJECT_DIR$/HTML/Application.html" />
       </list>
     </option>
   </component>
@@ -480,9 +519,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -494,34 +531,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/main.css">
+    <entry file="file://$PROJECT_DIR$/HTML/UpdatePref.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/Application.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="210">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/SignOff.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HTML/Uber.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/UserReg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -534,10 +571,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HTML/UpdatePref.html">
+    <entry file="file://$PROJECT_DIR$/HTML/UserReg2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="199" column="19" selection-start-line="199" selection-start-column="19" selection-end-line="199" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/Application.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTML/mainyash.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-465">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
       </provider>
