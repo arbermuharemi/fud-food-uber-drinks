@@ -1,8 +1,8 @@
 import urllib2
 import json
 from uber_rides.session import Session
-# from uber_rides.client import UberRidesClient
-# from uber_rides.auth import AuthorizationCodeGrant
+from uber_rides.client import UberRidesClient
+from uber_rides.auth import AuthorizationCodeGrant
 
 input_flight_number = 813
 input_flight_origin_date = "2016-09-24"
