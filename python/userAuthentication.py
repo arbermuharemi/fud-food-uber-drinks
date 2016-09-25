@@ -19,12 +19,8 @@ def user_auth():
     global currentUser
     original_user = request.form['userField']
     original_pass = request.form['passField']
-    print original_user
-    print original_pass
     username = '\'' + original_user + '\''
     password = '\'' + original_pass + '\''
-    print username
-    print password
     is_valid_user = False
     query = "select UserName, Password \
              from users \
@@ -33,10 +29,7 @@ def user_auth():
         cursor.execute(query)
         results = cursor.fetchall()
         db_user = results[0][0]
-        print results
-        print db_user
         db_password = results[0][1]
-        print db_password
         if original_user == db_user and original_pass == db_password:
             is_valid_user = True
         else:
@@ -95,7 +88,6 @@ def addUserToDatabase2():
     drinks = request.form['drinkSelect']
     dietaryRestrictions = request.form.getlist('restrictionSelect');
     dietaryRestrictions = ','.join(dietaryRestrictions)
-    print (dietaryRestrictions)
     food = request.form['foodSelect']
     amountOwed = 0
     drinks_insert = '\'' + drinks + '\''
