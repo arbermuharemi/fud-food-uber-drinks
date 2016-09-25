@@ -19,33 +19,36 @@
             </div>
         </div>
         <div class="home-text-container">
-            <div class="signup-form2">
-
+            <div class="fill-div"></div>
+            <div class="food-form">
                 <form>
-                    <label for = "foodPreferences">Select Top 2 Entree Choices:</label>
-                <select id = "foodPreferences" method = "POST" action = "">
-                    <option value = "Egg and Cheddar Sandwiches, 340, 3.00">Egg and Cheddar Sandwiches</option>
-                    <option value = "All Natural Greek Salad, 270, 3.50">All Natural Greek Salad</option>
-                    <option value = "Teriyaki Chicken, 400, 6.00">Teriyaki Chicken</option>
-                    <option value = "Deli Brisket Sandwiches, 350, 4.50">Deli Brisket Sandwiches</option>
-                    <option value = "Baguette with butter, 400, 2.50">Baguette with butter</option>
-                    <option value = "Fruit Bowl, 200, 2.00">Fruit Bowl</option>
-                    <option value = "Hamburger, 500, 5.00">Hamburger</option>
-                </select>
-                    </form>
-
-                <form>
-                    <label for = "restrictions">Highlight Applicable Food Restrictions: </label>
-                    <select id = "restrictions" method = "POST" action = "message.html" multiple>
+                    <div id="entree-select">
+                        <label for = "foodPreferences">Select Entree:</label>
+                        <select id = "foodPreferences" method = "POST" action = "">
+                        <option value = "Egg and Cheddar Sandwiches, 340, 3.00">Egg and Cheddar Sandwiches, 340 cal, $3</option>
+                        <option value = "All Natural Greek Salad, 270, 3.50">All Natural Greek Salad, 270 cal, $3.50</option>
+                        <option value = "Teriyaki Chicken, 400, 6.00">Teriyaki Chicken, 400 cal, $6</option>
+                        <option value = "Deli Brisket Sandwiches, 350, 4.50">Deli Brisket Sandwiches, 350 cal, $4.50</option>
+                        <option value = "Baguette with butter, 400, 2.50">Baguette with butter, 400 cal, $2.50</option>
+                        <option value = "Fruit Bowl, 200, 2.00">Fruit Bowl, 200 cal, $2</option>
+                        <option value = "Hamburger, 500, 5.00">Hamburger, 500 cal, $5</option>
+                        </select>
+                    </div>
+                    <div id="restrict-select">
+                        <label id="food-restrict" for = "restrictions">Highlight Food Restrictions (hold control for several): </label>
+                        <select id = "restrictions" method = "POST" action = "message.html" multiple>
                         <option value = "Vegan">Vegan</option>
                         <option value = "Vegetarian">Vegetarian</option>
                         <option value = "Nut Allergies">Nut Allergies</option>
                         <option value = "Gluten Allergy">Gluten Allergy</option>
                         <option value = "Lactose Intolerance">Lactose Intolerance</option>
-                    </select>
+                        </select>
+                        <input type="text" id="username-entry" placeholder="Username"/>
+                        <input type="submit" id ="UserRegSubmit" value="submit"/>
+                    </div>
                 </form>
+                <a class="next-page-link" href="Uber.html"> >> </a>
             </div>
-            <Button id = "UserRegSubmit">Submit</Button>
         </div>
     </div>
 </body>
