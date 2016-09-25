@@ -52,6 +52,18 @@ header h1 {
     color: black;
 }
 
+# username-entry {
+    margin-top: 20px;
+}
+
+# entree-select {
+
+}
+
+# restric-select {
+    margin-top: 20px;
+}
+
 #food-restrict {
     margin-top: 20px;
 }
