@@ -1,7 +1,9 @@
 # fud-food-uber-drinks
 fud: Food, Uber, and Drinks  
 Simplifying air travel from the ground up  
-Devpost: https://devpost.com/software/hackgt-flightapp
+[**HackGT 2016: Delta Airlines' Best Corporate Customer Travel Experience**] (https://hackgt2016.devpost.com/)  
+[Devpost] (https://devpost.com/software/hackgt-flightapp "fud|Devpost")  
+[Delta Airlines Article] (http://news.delta.com/georgia-tech-hackathon-sky-s-limit-air-travel-innovation)
 
 ## Inspiration
 Improving the customer experience for air travel, in flight with food, and out of flight with ready-to-go Uber rides.
