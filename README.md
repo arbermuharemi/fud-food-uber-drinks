@@ -1,6 +1,6 @@
 # fud-food-uber-drinks
-fud: Food, Uber, and Drinks
-Simplifying air travel from the ground up
+fud: Food, Uber, and Drinks  
+Simplifying air travel from the ground up  
 Devpost: https://devpost.com/software/hackgt-flightapp
 
 ## Inspiration
