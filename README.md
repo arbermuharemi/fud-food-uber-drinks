@@ -1,5 +1,7 @@
 # fud-food-uber-drinks
+fud: Food, Uber, and Drinks
 Simplifying air travel from the ground up
+Devpost: https://devpost.com/software/hackgt-flightapp
 
 ## Inspiration
 Improving the customer experience for air travel, in flight with food, and out of flight with ready-to-go Uber rides.
